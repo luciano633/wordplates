@@ -63,16 +63,22 @@ Always read `reference/gotchas.md` before touching the server.
 
 ## Skills that compose
 
-This skill is the **orchestrator**. Invoke these at the right phase (must be installed locally;
-review third-party instructions before trusting; load on demand, not all at once):
+This skill is the **orchestrator**. Invoke these at the right phase (already installed in
+`~/.claude/skills`, symlinked from vendored repos; review third-party instructions before
+trusting; load on demand, not all at once):
 
 - **Phase 0/2 — mapping a brand's DS:** `extract-design-system` (derive DS from references),
-  `theme-factory` (generate palettes).
+  `theme-factory` (generate palettes), `brand-guidelines` (codify brand rules).
 - **Phase 3 — design HTML:** `frontend-design` (visual direction, hierarchy, type),
   `web-design-guidelines` (UI best practices).
-- **Phase 3+ — landing pages that convert:** `page-cro`, `copywriting`/`copy-editing`,
-  `form-cro`/`popup-cro`, `marketing-psychology`.
-- **Post-build — technical:** `seo-audit`, `schema-markup`.
+- **Phase 3+ — landing pages that convert:** `cro` (conversion structure), `copywriting`,
+  `marketing-psychology`, `popups` (lead-capture).
+- **Post-build — technical:** `seo-audit`, `schema` (structured data).
+
+Sources: anthropics/skills (`frontend-design`, `theme-factory`, `brand-guidelines`),
+vercel-labs/agent-skills (`web-design-guidelines`), arvindrk/extract-design-system,
+coreyhaines31/marketingskills (`cro`, `copywriting`, `marketing-psychology`, `popups`,
+`seo-audit`, `schema`). Vendored under `~/.claude/skills-vendor/`.
 
 ## Bundled
 
