@@ -67,3 +67,15 @@ on a new/production site.
     radius, script accents, frame weight live in the *block/layout treatment*, not the tokens.
     To truly re-skin (e.g. sporty→heritage), redo the treatment too, not just the palette/font
     vars. Reinforces "tokens são globais; treatment vive no bloco."
+
+15. **Headless render of HTML prototypes: don't use a tall `--window-size` for full-page.**
+    Chrome `--headless --screenshot` captures the *window*, so a tall window inflates `vh`
+    units (a `94vh` hero becomes the whole page). For a correct full-page shot use
+    `npx playwright screenshot --full-page --viewport-size=1280,900 file://… out.png`
+    (renders at a normal viewport, stitches the scroll). For a readable hero close-up use
+    Chrome `--window-size=1280,820 --force-device-scale-factor=2`. To read a long page, crop
+    bands with PIL (`python3` + Pillow).
+
+16. **Third-party skills symlinked mid-session aren't invocable via the Skill tool** until a
+    session restart (skills are discovered at boot). To use them in the same session, read their
+    `SKILL.md` directly and apply the method. After restart they work as `/cro`, `/copywriting`, etc.
