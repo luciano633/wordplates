@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yuza DS — specimen</title>
+<link rel="stylesheet" href="./yuza-ds.css">
+<style>
+  .wrap { max-width: 1080px; margin: 0 auto; padding: var(--space-16) var(--space-8); }
+  .sec { margin-bottom: var(--space-16); }
+  .swatches { display:flex; flex-wrap:wrap; gap:var(--space-4); }
+  .sw { width:150px; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm); background:var(--white); }
+  .sw .chip { height:88px; }
+  .sw .meta { padding:10px 12px; font-size:var(--fs-sm); }
+  .sw .meta b { display:block; font-weight:700; }
+  .sw .meta span { color:var(--color-muted); font-family:ui-monospace,monospace; font-size:.78rem; }
+  .row { display:flex; gap:var(--space-4); flex-wrap:wrap; align-items:center; }
+  .label { font-family:ui-monospace,monospace; font-size:.72rem; color:var(--color-muted); letter-spacing:.04em; }
+  .hero { background:var(--navy); color:var(--white); border-radius:var(--radius-md); padding:var(--space-16) var(--space-12); margin-bottom:var(--space-16); }
+  .hero .t-display { color:#fff; }
+  .hero .t-eyebrow { color:var(--accent); }
+  hr { border:0; border-top:1px solid rgba(0,0,0,.08); margin:var(--space-8) 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- mini hero pra sentir a marca -->
+  <div class="hero">
+    <p class="t-eyebrow">Inteligência de campo</p>
+    <h1 class="t-display">Yuza · vença<br>antes do jogo</h1>
+    <p class="t-lead" style="color:rgba(255,255,255,.75);max-width:48ch;margin-top:var(--space-4)">
+      Especimen do design system extraído e curado — marinho, aço, creme e um pop coral.</p>
+    <div class="row" style="margin-top:var(--space-8)">
+      <a class="btn btn--accent" href="#">Começar agora</a>
+      <a class="btn" style="background:#fff;color:var(--navy)" href="#">Ver demo</a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="label">CORES</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--navy)"></div><div class="meta"><b>primary</b><span>#0D3479</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--steel)"></div><div class="meta"><b>secondary</b><span>#8B9DBC</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>text</b><span>#11161F</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--accent)"></div><div class="meta"><b>accent</b><span>#EE6C4D</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--cream);border:1px solid #ddd"></div><div class="meta"><b>bg / cream</b><span>#EEEDE4</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--white);border:1px solid #ddd"></div><div class="meta"><b>surface</b><span>#FFFFFF</span></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <p class="label">TIPOGRAFIA — Bebas Neue (display) · Inter (corpo)</p>
+    <p class="t-display" style="color:var(--navy)">Display 01</p>
+    <h1 class="t-h1" style="color:var(--navy)">Heading um · Bebas</h1>
+    <h2 class="t-h2" style="color:var(--navy)">Heading dois · Bebas</h2>
+    <h3 class="t-h3">Heading três · Inter 700</h3>
+    <p class="t-lead">Lead em Inter — texto de apoio com mais respiro e cor mutada para hierarquia.</p>
+    <p style="max-width:60ch">Corpo em Inter 400. The quick brown fox. Inteligência que antecede o jogo:
+      dados viram vantagem. 0123456789 — áéíóú ç ãõ.</p>
+  </div>
+
+  <div class="sec">
+    <p class="label">BOTÕES</p>
+    <div class="row">
+      <button class="btn btn--primary">Primary</button>
+      <button class="btn btn--accent">Accent</button>
+      <button class="btn btn--ghost">Ghost</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* Yuza — design system (extraído de constantine.framer.ai, curado)
+   Editorial-esportivo: marinho + aço + creme, pop coral. Bebas Neue + Inter. */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ---- paleta de marca (extraída) ---- */
+  --navy:      #0D3479;
+  --navy-700:  #0A2A63;   /* hover/escuro */
+  --steel:     #8B9DBC;
+  --cream:     #EEEDE4;   /* fundo de página */
+  --white:     #FFFFFF;   /* superfícies/cards */
+  --ink:       #11161F;   /* texto */
+  --accent:    #EE6C4D;   /* coral — pop (theme-factory) */
+  --accent-600:#D9542F;
+
+  /* ---- semânticos (use estes nos blocos) ---- */
+  --color-primary:    var(--navy);
+  --color-secondary:  var(--steel);
+  --color-text:       var(--ink);
+  --color-accent:     var(--accent);
+  --color-bg:         var(--cream);
+  --color-surface:    var(--white);
+  --color-on-primary: var(--white);
+  --color-muted:      #5B6472;
+
+  /* ---- tipografia ---- */
+  --font-display: "Bebas Neue", system-ui, sans-serif;     /* títulos, caixa-alta */
+  --font-body:    "Inter", system-ui, -apple-system, sans-serif;
+  --fs-display: clamp(3.5rem, 9vw, 8rem);
+  --fs-h1:      clamp(2.5rem, 6vw, 5rem);
+  --fs-h2:      clamp(1.8rem, 3.5vw, 2.75rem);
+  --fs-h3:      1.4rem;
+  --fs-lead:    1.25rem;
+  --fs-body:    1rem;
+  --fs-sm:      .875rem;
+  --fs-eyebrow: .8125rem;
+  --lh-tight: .92;
+  --lh-snug:  1.15;
+  --lh-body:  1.6;
+
+  /* ---- espaçamento (informado pela escala extraída) ---- */
+  --space-1:4px;  --space-2:8px;  --space-3:12px; --space-4:16px; --space-5:20px;
+  --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
+  --space-20:80px; --space-24:96px;
+
+  /* ---- raio / sombra ---- */
+  --radius-sm:6px; --radius-md:10px; --radius-pill:999px;
+  --shadow-sm:0 2px 8px rgba(13,52,121,.08);
+  --shadow-md:0 16px 40px rgba(13,52,121,.14);
+}
+
+/* ---- base ---- */
+* { box-sizing: border-box; }
+body {
+  margin:0; font-family:var(--font-body); font-size:var(--fs-body);
+  line-height:var(--lh-body); color:var(--color-text); background:var(--color-bg);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---- tipografia utilitária ---- */
+.t-display { font-family:var(--font-display); font-size:var(--fs-display); line-height:var(--lh-tight); letter-spacing:.01em; text-transform:uppercase; margin:0; }
+.t-h1 { font-family:var(--font-display); font-size:var(--fs-h1); line-height:var(--lh-snug); text-transform:uppercase; letter-spacing:.01em; margin:0; }
+.t-h2 { font-family:var(--font-display); font-size:var(--fs-h2); line-height:1.05; text-transform:uppercase; letter-spacing:.02em; margin:0; }
+.t-h3 { font-family:var(--font-body); font-weight:700; font-size:var(--fs-h3); line-height:1.25; margin:0; }
+.t-lead { font-size:var(--fs-lead); line-height:1.45; color:var(--color-muted); margin:0; }
+.t-eyebrow { font-family:var(--font-body); font-weight:700; font-size:var(--fs-eyebrow); letter-spacing:.18em; text-transform:uppercase; color:var(--color-accent); margin:0; }
+
+/* ---- botões ---- */
+.btn { display:inline-flex; align-items:center; gap:.5em; font-family:var(--font-body); font-weight:700; font-size:.95rem; letter-spacing:.03em; text-transform:uppercase; padding:14px 28px; border-radius:var(--radius-pill); border:0; cursor:pointer; text-decoration:none; }
+.btn--primary { background:var(--color-primary); color:var(--color-on-primary); }
+.btn--accent  { background:var(--color-accent); color:#fff; }
+.btn--ghost   { background:transparent; color:var(--color-primary); border:2px solid var(--color-primary); }

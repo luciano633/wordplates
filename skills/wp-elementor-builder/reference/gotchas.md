@@ -50,3 +50,10 @@ on a new/production site.
 
 11. **Library single doesn't render publicly.** A `post_type: elementor_library` item won't
     show its layout at a URL. To *see* a block, import it as a `post_type: page` (preview page).
+
+12. **extract-design-system on dynamic/Framer/CSS-in-JS sites comes back thin.** The
+    `normalized.json` / `tokens.json` may report 0 palette colors and a single font. **Mine
+    `.extract-design-system/raw.json`** — the real palette is under `colors.palette` (with
+    `count` + `confidence`) and `colors._raw`, plus `typography.styles[]`, `borderRadius`,
+    `borders`, `shadows`. Filter noise like `#0000EE` (unstyled-link blue). Then curate the 4
+    Kit slots from there. (Extraction is for initialization, not pixel-perfect reproduction.)
