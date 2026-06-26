@@ -1,0 +1,45 @@
+{
+  "content": [
+    {
+      "id": "f400c0a1",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "flex_gap": { "unit": "px", "size": 24, "column": "24", "row": "24" },
+        "padding": { "unit": "px", "top": "60", "right": "20", "bottom": "60", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "f4head01",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": { "title": "Perguntas frequentes", "header_size": "h2", "align": "center" },
+          "elements": []
+        },
+        {
+          "id": "f4acc001",
+          "elType": "widget",
+          "widgetType": "accordion",
+          "isInner": false,
+          "settings": {
+            "tabs": [
+              { "_id": "faq001a", "tab_title": "Como isso me ajuda a vender mais?", "tab_content": "<p>Você antecipa necessidades dos clientes e identifica oportunidades antes da concorrência.</p>" },
+              { "_id": "faq002b", "tab_title": "Meus RTVs vão usar? Não é complicado demais?", "tab_content": "<p>O app é intuitivo e funciona offline, pensado para o dia a dia no campo.</p>" },
+              { "_id": "faq003c", "tab_title": "O que acontece se um RTV sair da empresa?", "tab_content": "<p>Todo o histórico de visitas fica na revenda, não com a pessoa.</p>" },
+              { "_id": "faq004d", "tab_title": "Vocês têm integrações?", "tab_content": "<p>Somos compatíveis com os principais ERPs agrícolas do mercado.</p>" },
+              { "_id": "faq005e", "tab_title": "Como faço o follow up?", "tab_content": "<p>O dashboard mostra exatamente o que cada RTV está fazendo.</p>" }
+            ]
+          },
+          "elements": []
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Bloco 04 — FAQ",
+  "type": "container"
+}

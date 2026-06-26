@@ -1,0 +1,449 @@
+/* ============================================================================
+   ALLURE — DESIGN SYSTEM PARA APRESENTAÇÕES COMERCIAIS
+   v1.1 · 2026-06-23
+   ----------------------------------------------------------------------------
+   Identidade Allure (display Aspekta, corpo Roboto, verde #32B61B, ink #1C1C21)
+   + linguagem editorial OneSoil (fundos creme, taupe, verde-floresta, menta).
+   Importe junto com:
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+     <script src="https://unpkg.com/lucide@latest"></script>  // depois: lucide.createIcons()
+   (A fonte display Aspekta é auto-hospedada — ver @font-face abaixo.)
+   ============================================================================ */
+
+/* ===========================================================================
+   0. FONTE DISPLAY — Aspekta (variável, auto-hospedada)
+   Família open-source de Ivo Dolenc · github.com/ivodolenc/aspekta
+   =========================================================================== */
+@font-face {
+  font-family: "Aspekta";
+  src: url("assets/fonts/AspektaVF.woff2") format("woff2-variations");
+  font-weight: 50 1000;   /* eixo variável completo */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===========================================================================
+   1. TOKENS
+   =========================================================================== */
+:root {
+  /* --- Verde de marca (escala) --------------------------------------------- */
+  --green-50:  #ECF7E8;
+  --green-100: #D3EFCB;
+  --green-200: #A9DF99;
+  --green-300: #69DD9A;   /* menta — acento OneSoil */
+  --green-400: #5AB82C;   /* verde do app/PWA */
+  --green-500: #32B61B;   /* ★ VERDE PRINCIPAL (site corporativo) */
+  --green-600: #2E9E1A;
+  --green-700: #0A8F3C;   /* verde escuro corporativo */
+  --green-800: #0A5A2E;
+  --green-900: #003A1E;   /* verde-floresta — slides premium (OneSoil) */
+
+  /* --- Sage / terroso (secundário, herança do painel) ---------------------- */
+  --sage:       #5D7A4D;
+  --sage-soft:  #E7EEDE;
+
+  /* --- Neutros quentes (fundos editoriais OneSoil) ------------------------- */
+  --cream:      #F6F4EF;  /* fundo claro principal */
+  --cream-2:    #EDE8E2;  /* fundo claro secundário */
+  --off-white:  #FAF9F7;  /* off-white do app */
+  --paper:      #FFFFFF;  /* branco puro — cards */
+  --taupe:      #6D6351;  /* texto/dividers terrosos */
+  --taupe-soft: #E3E2DD;
+
+  /* --- Tinta / texto ------------------------------------------------------- */
+  --ink:        #1C1C21;  /* texto principal (marca) */
+  --ink-2:      #5C5C66;  /* texto secundário */
+  --ink-muted:  #8A8A94;  /* legendas, hints */
+  --on-dark:    #F6F4EF;  /* texto sobre slides escuros */
+  --on-dark-2:  #AEB6AE;
+
+  /* --- Bordas -------------------------------------------------------------- */
+  --border:        #E9E7E0;
+  --border-strong: #D8D5CC;
+  --hairline:      0.5px;
+
+  /* --- Acentos (categorias / gráficos) — herdados do app ------------------- */
+  --accent-blue:   #2E7BD4;
+  --accent-amber:  #D97706;
+  --accent-purple: #8B5CF6;
+  --accent-red:    #E5484D;
+  --accent-mint:   #69DD9A;
+
+  /* --- Semânticos ---------------------------------------------------------- */
+  --success: var(--green-500);
+  --warning: var(--accent-amber);
+  --danger:  var(--accent-red);
+  --info:    var(--accent-blue);
+
+  /* --- Tipografia ---------------------------------------------------------- */
+  --font-display: "Aspekta", "Roboto", system-ui, sans-serif;  /* títulos hero / display */
+  --font-sans:    "Roboto", system-ui, -apple-system, sans-serif;
+
+  /* escala fluida (pensada para slides 16:9) */
+  --fs-display: clamp(2.75rem, 5.2vw, 4.5rem);
+  --fs-h1:      clamp(2rem, 3.6vw, 3rem);
+  --fs-h2:      clamp(1.5rem, 2.6vw, 2.125rem);
+  --fs-h3:      clamp(1.125rem, 1.8vw, 1.5rem);
+  --fs-lead:    clamp(1.0625rem, 1.5vw, 1.375rem);
+  --fs-body:    1rem;
+  --fs-sm:      0.875rem;
+  --fs-xs:      0.75rem;
+  --fs-eyebrow: 0.8125rem;
+
+  --lh-tight: 1.08;
+  --lh-snug:  1.25;
+  --lh-body:  1.6;
+
+  /* --- Espaçamento (base 4px) --------------------------------------------- */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-8: 32px;  --space-10: 40px;
+  --space-12: 48px; --space-16: 64px; --space-20: 80px; --space-24: 96px;
+
+  /* --- Raios --------------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* --- Sombras (sutis, estilo Airbnb-minimal) ----------------------------- */
+  --shadow-xs:  0 1px 2px rgba(28,28,33,.05);
+  --shadow-sm:  0 2px 8px rgba(28,28,33,.06);
+  --shadow-md:  0 8px 24px rgba(28,28,33,.08);
+  --shadow-lg:  0 20px 48px rgba(28,28,33,.12);
+
+  /* --- Slide --------------------------------------------------------------- */
+  --slide-w: 1280px;
+  --slide-h: 720px;          /* 16:9 */
+  --slide-pad: clamp(40px, 5vw, 72px);
+}
+
+/* ===========================================================================
+   2. BASE / RESET LEVE
+   =========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+
+/* ===========================================================================
+   3. TIPOGRAFIA — utilitários
+   =========================================================================== */
+.t-display { font-family: var(--font-display); font-weight: 900; font-size: var(--fs-display);
+             line-height: var(--lh-tight); letter-spacing: -0.02em; margin: 0; }
+.t-h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h1);
+        line-height: var(--lh-tight); letter-spacing: -0.015em; margin: 0; }
+.t-h2 { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-h2);
+        line-height: var(--lh-snug); letter-spacing: -0.01em; margin: 0; }
+.t-h3 { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-h3);
+        line-height: var(--lh-snug); margin: 0; }
+.t-lead { font-size: var(--fs-lead); line-height: 1.45; color: var(--ink-2); margin: 0; font-weight: 400; }
+.t-body { font-size: var(--fs-body); line-height: var(--lh-body); margin: 0; }
+.t-sm   { font-size: var(--fs-sm); }
+.t-xs   { font-size: var(--fs-xs); }
+.t-muted { color: var(--ink-muted); }
+.t-secondary { color: var(--ink-2); }
+
+/* Eyebrow / overline — assinatura visual Allure */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-size: var(--fs-eyebrow); font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--green-600); margin: 0;
+}
+.eyebrow::before {
+  content: ""; width: 22px; height: 2px; border-radius: 2px;
+  background: var(--green-500);
+}
+.eyebrow--on-dark { color: var(--green-300); }
+.eyebrow--on-dark::before { background: var(--green-300); }
+
+/* destaque inline */
+.hl { color: var(--green-600); }
+.hl-mark { background: linear-gradient(180deg, transparent 58%, var(--green-200) 58%); }
+
+/* ===========================================================================
+   4. BOTÕES
+   =========================================================================== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  font-family: var(--font-sans); font-size: var(--fs-sm); font-weight: 500;
+  line-height: 1; padding: 14px 22px; border-radius: var(--radius-pill);
+  border: 1px solid transparent; cursor: pointer; text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn .icon, .btn svg { width: 18px; height: 18px; }
+
+.btn--primary { background: var(--green-500); color: #fff; box-shadow: var(--shadow-sm); }
+.btn--primary:hover { background: var(--green-600); box-shadow: var(--shadow-md); }
+
+.btn--dark { background: var(--ink); color: var(--cream); }
+.btn--dark:hover { background: #000; }
+
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--border-strong); }
+.btn--ghost:hover { border-color: var(--ink); background: rgba(28,28,33,.03); }
+
+.btn--on-dark { background: var(--green-300); color: var(--green-900); }
+.btn--on-dark:hover { background: #fff; }
+
+.btn--lg { padding: 17px 30px; font-size: var(--fs-body); }
+
+/* ===========================================================================
+   5. PILLS / BADGES / TAGS
+   =========================================================================== */
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: var(--radius-pill);
+  font-size: var(--fs-xs); font-weight: 500; line-height: 1;
+  background: var(--sage-soft); color: var(--green-800);
+}
+.pill--outline { background: transparent; border: 1px solid var(--border-strong); color: var(--ink-2); }
+.pill--solid   { background: var(--green-500); color: #fff; }
+.pill--dark    { background: rgba(255,255,255,.12); color: var(--on-dark); }
+.pill .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+/* ===========================================================================
+   6. CARDS
+   =========================================================================== */
+.card {
+  background: var(--paper); border: var(--hairline) solid var(--border);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+  box-shadow: var(--shadow-xs);
+}
+.card--lifted { box-shadow: var(--shadow-md); border-color: transparent; }
+.card--cream  { background: var(--cream-2); border-color: transparent; }
+.card--sage   { background: var(--sage-soft); border-color: transparent; }
+.card--dark   { background: var(--green-900); color: var(--on-dark); border-color: transparent; }
+.card--outline{ background: transparent; }
+
+/* Feature card: ícone + título + texto */
+.feature {
+  display: flex; flex-direction: column; gap: var(--space-3);
+}
+.feature__icon {
+  width: 48px; height: 48px; border-radius: var(--radius-md);
+  display: grid; place-items: center; background: var(--green-50); color: var(--green-600);
+  flex: none;
+}
+.feature__icon svg { width: 24px; height: 24px; }
+.feature__title { font-weight: 700; font-size: var(--fs-h3); margin: 0; }
+.feature__text  { color: var(--ink-2); margin: 0; }
+.card--dark .feature__icon { background: rgba(105,221,154,.16); color: var(--green-300); }
+.card--dark .feature__text { color: var(--on-dark-2); }
+
+/* ===========================================================================
+   7. KPI / MÉTRICAS  (ex.: -70% relatórios, +30% visitas, +25% receita)
+   =========================================================================== */
+.kpi { display: flex; flex-direction: column; gap: 6px; }
+.kpi__value {
+  font-family: var(--font-display); font-weight: 900;
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem); line-height: 1;
+  letter-spacing: -0.03em; color: var(--green-600);
+}
+.kpi__value .unit { font-size: 0.5em; font-weight: 700; }
+.kpi__label { font-size: var(--fs-sm); color: var(--ink-2); font-weight: 500; }
+.kpi__trend { display: inline-flex; align-items: center; gap: 4px; font-size: var(--fs-xs);
+              font-weight: 700; color: var(--green-600); }
+.kpi--on-dark .kpi__value { color: var(--green-300); }
+.kpi--on-dark .kpi__label { color: var(--on-dark-2); }
+
+/* ===========================================================================
+   8. LISTAS COM MARCADOR DE MARCA
+   =========================================================================== */
+.list-check { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.list-check li { display: flex; gap: var(--space-3); align-items: flex-start; line-height: 1.4; }
+.list-check li::before {
+  content: ""; flex: none; width: 22px; height: 22px; margin-top: 1px;
+  border-radius: 50%; background: var(--green-50);
+  /* checkmark via mask */
+  background-image: radial-gradient(circle, var(--green-50) 100%, transparent 0);
+  position: relative;
+}
+.list-check li > .ck {
+  flex: none; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--green-100); color: var(--green-700);
+  display: grid; place-items: center; margin-top: 1px;
+}
+.list-check li > .ck svg { width: 14px; height: 14px; }
+/* simplificada: quando usar <span class="ck"> remova o ::before */
+.list-check li:has(.ck)::before { display: none; }
+
+.list-num { list-style: none; margin: 0; padding: 0; counter-reset: n; display: grid; gap: var(--space-4); }
+.list-num li { counter-increment: n; display: flex; gap: var(--space-4); align-items: flex-start; }
+.list-num li::before {
+  content: counter(n, decimal-leading-zero);
+  font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h3);
+  color: var(--green-500); flex: none; min-width: 1.8em;
+}
+
+/* ===========================================================================
+   9. QUOTE / DEPOIMENTO
+   =========================================================================== */
+.quote { display: grid; gap: var(--space-5); }
+.quote__mark { font-family: var(--font-display); font-size: 4rem; line-height: .6;
+               color: var(--green-300); height: 2rem; }
+.quote__text { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-h2);
+               line-height: 1.35; color: var(--ink); }
+.quote__author { display: flex; align-items: center; gap: var(--space-3); }
+.quote__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+                 background: var(--cream-2); flex: none; }
+.quote__name { font-weight: 700; }
+.quote__role { font-size: var(--fs-sm); color: var(--ink-muted); }
+.card--dark .quote__text { color: var(--on-dark); }
+.card--dark .quote__role { color: var(--on-dark-2); }
+
+/* ===========================================================================
+   10. GRÁFICO DE BARRAS (CSS puro) — comparativos Testemunha vs Desafio etc.
+   =========================================================================== */
+.barchart { display: grid; gap: var(--space-4); }
+.barchart__row { display: grid; grid-template-columns: 120px 1fr auto; align-items: center; gap: var(--space-4); }
+.barchart__label { font-size: var(--fs-sm); color: var(--ink-2); font-weight: 500; }
+.barchart__track { height: 14px; background: var(--cream-2); border-radius: var(--radius-pill); overflow: hidden; }
+.barchart__fill  { height: 100%; border-radius: var(--radius-pill); background: var(--green-500);
+                   transition: width .8s cubic-bezier(.22,1,.36,1); }
+.barchart__fill--alt { background: var(--taupe); }
+.barchart__fill--mint{ background: var(--green-300); }
+.barchart__val   { font-weight: 700; font-size: var(--fs-sm); min-width: 48px; text-align: right; }
+
+/* legenda */
+.legend { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+.legend__item { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--fs-sm); color: var(--ink-2); }
+.legend__swatch { width: 12px; height: 12px; border-radius: 3px; }
+
+/* ===========================================================================
+   11. COMPARATIVO (antes/depois · Testemunha/Desafio)
+   =========================================================================== */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.compare__col { border-radius: var(--radius-lg); padding: var(--space-5); border: var(--hairline) solid var(--border); }
+.compare__col--before { background: var(--cream-2); }
+.compare__col--after  { background: var(--green-50); border-color: var(--green-200); }
+.compare__tag { font-size: var(--fs-xs); font-weight: 700; text-transform: uppercase;
+                letter-spacing: .08em; color: var(--ink-muted); margin-bottom: var(--space-3); }
+.compare__col--after .compare__tag { color: var(--green-700); }
+
+/* ===========================================================================
+   12. TABELA
+   =========================================================================== */
+.table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.table th, .table td { text-align: left; padding: var(--space-3) var(--space-4); }
+.table thead th { font-weight: 700; color: var(--ink-2); text-transform: uppercase;
+                  font-size: var(--fs-xs); letter-spacing: .06em; border-bottom: 2px solid var(--border-strong); }
+.table tbody tr { border-bottom: var(--hairline) solid var(--border); }
+.table tbody tr:hover { background: var(--off-white); }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ===========================================================================
+   13. LOGO LOCKUP
+   =========================================================================== */
+.logo { height: 28px; width: auto; }
+.logo--lg { height: 40px; }
+.logo--on-dark { filter: brightness(0) invert(1); }   /* logo escuro → branco */
+
+/* ===========================================================================
+   14. SLIDE SYSTEM — 16:9
+   =========================================================================== */
+.slide {
+  position: relative; width: var(--slide-w); height: var(--slide-h);
+  background: var(--cream); color: var(--ink); overflow: hidden;
+  padding: var(--slide-pad);
+  display: flex; flex-direction: column;
+}
+.slide--paper { background: var(--paper); }
+.slide--cream { background: var(--cream); }
+.slide--cream-2 { background: var(--cream-2); }
+.slide--dark  { background: var(--green-900); color: var(--on-dark); }
+.slide--ink   { background: var(--ink); color: var(--on-dark); }
+
+/* faixa de cabeçalho com eyebrow + paginação */
+.slide__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6); }
+.slide__body   { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+.slide__footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: var(--space-6); padding-top: var(--space-4);
+  border-top: var(--hairline) solid var(--border);
+  font-size: var(--fs-xs); color: var(--ink-muted);
+}
+.slide--dark .slide__footer, .slide--ink .slide__footer { border-color: rgba(255,255,255,.12); color: var(--on-dark-2); }
+.slide__page { font-variant-numeric: tabular-nums; }
+
+/* layout: cover (capa) */
+.slide--cover .slide__body { justify-content: center; gap: var(--space-6); max-width: 80%; }
+
+/* layout: split 2 colunas */
+.slide__split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; height: 100%; }
+.slide__split--narrow { grid-template-columns: 1.2fr 1fr; }
+
+/* grade de cards */
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--space-5); }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-5); }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--space-4); }
+
+/* elemento decorativo — "campo" / curva orgânica de fundo */
+.slide__blob {
+  position: absolute; border-radius: 50%; filter: blur(0.5px);
+  background: radial-gradient(circle at 30% 30%, var(--green-300), var(--green-500));
+  opacity: .14; pointer-events: none;
+}
+.slide__grain {
+  position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(var(--border) 0.5px, transparent 0.5px);
+  background-size: 22px 22px; mask-image: linear-gradient(180deg, transparent, #000 60%);
+}
+
+/* mockup / imagem com moldura */
+.frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+         border: var(--hairline) solid var(--border); background: var(--paper); }
+
+/* divider de seção (agenda / capítulo) */
+.section-index { font-family: var(--font-display); font-weight: 900;
+                 font-size: clamp(4rem, 12vw, 9rem); line-height: .85;
+                 color: var(--green-300); opacity: .9; letter-spacing: -0.04em; }
+
+/* ===========================================================================
+   15. DECK RUNNER — visualização de slides em tela (palco + nav)
+   =========================================================================== */
+.deck { background: #14140f; min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.stage {
+  width: min(96vw, calc(96vh * 16/9));
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5); border-radius: 14px; overflow: hidden;
+  position: relative; background: var(--cream);
+}
+/* o .slide escala para preencher o palco */
+.stage .slide {
+  position: absolute; inset: 0; width: var(--slide-w); height: var(--slide-h);
+  transform-origin: top left;
+  transform: scale(calc(min(96vw, 96vh*16/9) / var(--slide-w)));
+}
+.deck-nav { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 14px; background: rgba(0,0,0,.55);
+  color: #fff; padding: 8px 14px; border-radius: var(--radius-pill); backdrop-filter: blur(8px);
+  font-size: 13px; z-index: 100; }
+.deck-nav button { background: rgba(255,255,255,.14); color: #fff; border: 0; width: 30px; height: 30px;
+  border-radius: 50%; cursor: pointer; font-size: 15px; display: grid; place-items: center; }
+.deck-nav button:hover { background: rgba(255,255,255,.28); }
+
+/* ===========================================================================
+   16. HELPERS
+   =========================================================================== */
+.stack-2 > * + * { margin-top: var(--space-2); }
+.stack-3 > * + * { margin-top: var(--space-3); }
+.stack-4 > * + * { margin-top: var(--space-4); }
+.stack-6 > * + * { margin-top: var(--space-6); }
+.row { display: flex; gap: var(--space-3); align-items: center; }
+.row--between { justify-content: space-between; }
+.wrap { flex-wrap: wrap; }
+.center { text-align: center; }
+.mt-auto { margin-top: auto; }
+.fill { width: 100%; }
+.maxw-prose { max-width: 56ch; }

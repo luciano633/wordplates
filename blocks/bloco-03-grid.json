@@ -1,0 +1,191 @@
+{
+  "content": [
+    {
+      "id": "g300c0a1",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_gap": { "unit": "px", "size": 24, "column": "24", "row": "24" },
+        "flex_align_items": "stretch",
+        "padding": { "unit": "px", "top": "60", "right": "20", "bottom": "60", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "g3card01",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "_flex_grow": 1,
+            "width": { "unit": "px", "size": 240 },
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": { "unit": "px", "size": 12, "column": "12", "row": "12" },
+            "padding": { "unit": "px", "top": "24", "right": "24", "bottom": "24", "left": "24", "isLinked": true }
+          },
+          "elements": [
+            {
+              "id": "g3ico01a",
+              "elType": "widget",
+              "widgetType": "icon",
+              "isInner": false,
+              "settings": {
+                "selected_icon": { "value": "fas fa-bullseye", "library": "fa-solid" },
+                "__globals__": { "primary_color": "globals/colors?id=primary" }
+              },
+              "elements": []
+            },
+            {
+              "id": "g3hd01ab",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": { "title": "Inteligência que antecede o CRM", "header_size": "h3", "align": "center" },
+              "elements": []
+            },
+            {
+              "id": "g3tx01ab",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": { "editor": "<p>A venda nasce no talhão, onde identificamos a oportunidade para seu time agir antes da concorrência.</p>", "align": "center" },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "g3card02",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "_flex_grow": 1,
+            "width": { "unit": "px", "size": 240 },
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": { "unit": "px", "size": 12, "column": "12", "row": "12" },
+            "padding": { "unit": "px", "top": "24", "right": "24", "bottom": "24", "left": "24", "isLinked": true }
+          },
+          "elements": [
+            {
+              "id": "g3ico02a",
+              "elType": "widget",
+              "widgetType": "icon",
+              "isInner": false,
+              "settings": {
+                "selected_icon": { "value": "fas fa-bolt", "library": "fa-solid" },
+                "__globals__": { "primary_color": "globals/colors?id=primary" }
+              },
+              "elements": []
+            },
+            {
+              "id": "g3hd02ab",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": { "title": "O seu RTV não perde venda", "header_size": "h3", "align": "center" },
+              "elements": []
+            },
+            {
+              "id": "g3tx02ab",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": { "editor": "<p>Ele chega antes, chega sabendo muito mais que a concorrência.</p>", "align": "center" },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "g3card03",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "_flex_grow": 1,
+            "width": { "unit": "px", "size": 240 },
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": { "unit": "px", "size": 12, "column": "12", "row": "12" },
+            "padding": { "unit": "px", "top": "24", "right": "24", "bottom": "24", "left": "24", "isLinked": true }
+          },
+          "elements": [
+            {
+              "id": "g3ico03a",
+              "elType": "widget",
+              "widgetType": "icon",
+              "isInner": false,
+              "settings": {
+                "selected_icon": { "value": "fas fa-tags", "library": "fa-solid" },
+                "__globals__": { "primary_color": "globals/colors?id=primary" }
+              },
+              "elements": []
+            },
+            {
+              "id": "g3hd03ab",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": { "title": "Saia da guerra de preço", "header_size": "h3", "align": "center" },
+              "elements": []
+            },
+            {
+              "id": "g3tx03ab",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": { "editor": "<p>Com mais dados sobre a lavoura, você antecipa problemas e sugere soluções.</p>", "align": "center" },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "g3card04",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "_flex_grow": 1,
+            "width": { "unit": "px", "size": 240 },
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": { "unit": "px", "size": 12, "column": "12", "row": "12" },
+            "padding": { "unit": "px", "top": "24", "right": "24", "bottom": "24", "left": "24", "isLinked": true }
+          },
+          "elements": [
+            {
+              "id": "g3ico04a",
+              "elType": "widget",
+              "widgetType": "icon",
+              "isInner": false,
+              "settings": {
+                "selected_icon": { "value": "fas fa-users", "library": "fa-solid" },
+                "__globals__": { "primary_color": "globals/colors?id=primary" }
+              },
+              "elements": []
+            },
+            {
+              "id": "g3hd04ab",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": { "title": "Entenda a sua equipe", "header_size": "h3", "align": "center" },
+              "elements": []
+            },
+            {
+              "id": "g3tx04ab",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": { "editor": "<p>Saiba quem performa e quem precisa de suporte.</p>", "align": "center" },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Bloco 03 — Grid de funcionalidades",
+  "type": "container"
+}

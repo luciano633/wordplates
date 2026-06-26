@@ -1,0 +1,76 @@
+{
+  "content": [
+    {
+      "id": "a1f3c2e9",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "row",
+        "flex_gap": { "unit": "px", "size": 40, "column": "40", "row": "40" },
+        "flex_align_items": "center"
+      },
+      "elements": [
+        {
+          "id": "b7d40a16",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "_flex_grow": 1,
+            "width": { "unit": "%", "size": 50 }
+          },
+          "elements": [
+            {
+              "id": "c2e89f31",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "Inteligência que antecede o CRM",
+                "header_size": "h2",
+                "__globals__": {
+                  "title_color": "globals/colors?id=primary"
+                }
+              },
+              "elements": []
+            },
+            {
+              "id": "d4a17b55",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>Descreva aqui o benefício deste bloco. Edite apenas este texto — a estrutura e as cores vêm do design system global.</p>"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "e6b3c0d8",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "_flex_grow": 1,
+            "width": { "unit": "%", "size": 50 }
+          },
+          "elements": [
+            {
+              "id": "f1907a2c",
+              "elType": "widget",
+              "widgetType": "image",
+              "isInner": false,
+              "settings": {
+                "image_size": "large"
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Bloco 02 — Imagem + Texto",
+  "type": "container"
+}

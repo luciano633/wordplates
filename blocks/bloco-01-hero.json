@@ -1,0 +1,99 @@
+{
+  "content": [
+    {
+      "id": "h100c0a1",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "background_background": "classic",
+        "background_color": "#FAF9F7",
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "padding": { "unit": "px", "top": "100", "right": "20", "bottom": "72", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "h1inner1",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "content_width": "boxed",
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": { "unit": "px", "size": 16, "column": "16", "row": "16" }
+          },
+          "elements": [
+            {
+              "id": "h1head01",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "Transforme dados do campo em vantagem comercial",
+                "header_size": "h1",
+                "align": "center",
+                "title_color": "",
+                "typography_typography": "custom",
+                "typography_font_family": "Aspekta",
+                "typography_font_weight": "700",
+                "typography_font_size": { "unit": "px", "size": 56 },
+                "typography_font_size_mobile": { "unit": "px", "size": 32 },
+                "typography_line_height": { "unit": "em", "size": 1.1 },
+                "__globals__": { "title_color": "globals/colors?id=text" }
+              },
+              "elements": []
+            },
+            {
+              "id": "h1sub002",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "isInner": false,
+              "settings": {
+                "editor": "<p>Saiba exatamente do que o produtor precisa, <span style=\"color:#8A8A94;\">e garanta a próxima venda.</span></p>",
+                "align": "center",
+                "typography_typography": "custom",
+                "typography_font_family": "Roboto",
+                "typography_font_size": { "unit": "px", "size": 20 }
+              },
+              "elements": []
+            },
+            {
+              "id": "h1img004",
+              "elType": "widget",
+              "widgetType": "image",
+              "isInner": false,
+              "settings": {
+                "image": { "url": "https://allure.agr.br/wp-content/uploads/2025/11/mock-dash.png", "id": "" },
+                "image_size": "full",
+                "align": "center",
+                "width": { "unit": "px", "size": 920 },
+                "_margin": { "unit": "px", "top": "48", "right": "0", "bottom": "0", "left": "0", "isLinked": false }
+              },
+              "elements": []
+            },
+            {
+              "id": "h1arrow5",
+              "elType": "widget",
+              "widgetType": "icon",
+              "isInner": false,
+              "settings": {
+                "selected_icon": { "value": "fas fa-arrow-down", "library": "fa-solid" },
+                "view": "framed",
+                "shape": "circle",
+                "primary_color": "#8A8A94",
+                "size": { "unit": "px", "size": 14 },
+                "_margin": { "unit": "px", "top": "40", "right": "0", "bottom": "0", "left": "0", "isLinked": false }
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "Bloco 01 — Hero",
+  "type": "container"
+}
