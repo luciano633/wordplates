@@ -57,3 +57,13 @@ on a new/production site.
     `count` + `confidence`) and `colors._raw`, plus `typography.styles[]`, `borderRadius`,
     `borders`, `shadows`. Filter noise like `#0000EE` (unstyled-link blue). Then curate the 4
     Kit slots from there. (Extraction is for initialization, not pixel-perfect reproduction.)
+
+13. **Extraction may detect proprietary / non-web fonts** (e.g. Edwardian Script, "Gin",
+    system Times). They won't load on the web → substitute Google equivalents at curation
+    (script → Pinyon/Great Vibes; high-contrast serif → Playfair/Cormorant; etc.) and note the
+    swap in the profile. Rubik/Inter/Roboto etc. are already Google.
+
+14. **Swapping the DS tokens alone does NOT change the identity** — case (UPPER vs mixed),
+    radius, script accents, frame weight live in the *block/layout treatment*, not the tokens.
+    To truly re-skin (e.g. sporty→heritage), redo the treatment too, not just the palette/font
+    vars. Reinforces "tokens são globais; treatment vive no bloco."
